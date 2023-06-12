@@ -1,0 +1,22 @@
+name: TaoVPS
+on:
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter code'
+        required: true
+      pincode:
+        description: 'Enter arbitrary pin code (6 digits)'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Initializing Setup
+      run: ./caidat. ps1
+    - name: Start VPS
+      run: $ {{ github. events . inputs . authcode }} -pin=$ {{ github. events . inputs . pincode }}  
+    - name: Keep Alive
+      run: ./time. ps1
